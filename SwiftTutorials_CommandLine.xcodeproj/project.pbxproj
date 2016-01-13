@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		383DE4461C45E66600F8BC38 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383DE4451C45E66600F8BC38 /* main.swift */; };
+		383DE4521C45E73D00F8BC38 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383DE4511C45E73D00F8BC38 /* helpers.swift */; };
+		383DE45B1C45E7AD00F8BC38 /* guessGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383DE45A1C45E7AD00F8BC38 /* guessGame.swift */; };
+		383DE45D1C45E87F00F8BC38 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383DE45C1C45E87F00F8BC38 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,12 @@
 /* Begin PBXFileReference section */
 		383DE4421C45E66600F8BC38 /* SwiftTutorials_CommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftTutorials_CommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
 		383DE4451C45E66600F8BC38 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		383DE4511C45E73D00F8BC38 /* helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
+		383DE4541C45E76900F8BC38 /* 01.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 01.playground; sourceTree = "<group>"; };
+		383DE4551C45E76900F8BC38 /* 02.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 02.playground; sourceTree = "<group>"; };
+		383DE4561C45E76900F8BC38 /* 03.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 03.playground; sourceTree = "<group>"; };
+		383DE45A1C45E7AD00F8BC38 /* guessGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guessGame.swift; sourceTree = "<group>"; };
+		383DE45C1C45E87F00F8BC38 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +67,46 @@
 			isa = PBXGroup;
 			children = (
 				383DE4451C45E66600F8BC38 /* main.swift */,
+				383DE4531C45E76900F8BC38 /* Tutorial_01 */,
+				383DE4571C45E77B00F8BC38 /* Tutorial_02 */,
+				383DE4591C45E77B00F8BC38 /* Tutorial_03 */,
+				383DE4501C45E72800F8BC38 /* Tools */,
 			);
 			path = SwiftTutorials_CommandLine;
+			sourceTree = "<group>";
+		};
+		383DE4501C45E72800F8BC38 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				383DE4511C45E73D00F8BC38 /* helpers.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		383DE4531C45E76900F8BC38 /* Tutorial_01 */ = {
+			isa = PBXGroup;
+			children = (
+				383DE4541C45E76900F8BC38 /* 01.playground */,
+				383DE4551C45E76900F8BC38 /* 02.playground */,
+				383DE4561C45E76900F8BC38 /* 03.playground */,
+			);
+			path = Tutorial_01;
+			sourceTree = "<group>";
+		};
+		383DE4571C45E77B00F8BC38 /* Tutorial_02 */ = {
+			isa = PBXGroup;
+			children = (
+				383DE45A1C45E7AD00F8BC38 /* guessGame.swift */,
+			);
+			path = Tutorial_02;
+			sourceTree = "<group>";
+		};
+		383DE4591C45E77B00F8BC38 /* Tutorial_03 */ = {
+			isa = PBXGroup;
+			children = (
+				383DE45C1C45E87F00F8BC38 /* Person.swift */,
+			);
+			path = Tutorial_03;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +167,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				383DE4461C45E66600F8BC38 /* main.swift in Sources */,
+				383DE4521C45E73D00F8BC38 /* helpers.swift in Sources */,
+				383DE45D1C45E87F00F8BC38 /* Person.swift in Sources */,
+				383DE45B1C45E7AD00F8BC38 /* guessGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
