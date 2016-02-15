@@ -34,6 +34,7 @@
 		383DE4561C45E76900F8BC38 /* 03.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 03.playground; sourceTree = "<group>"; };
 		383DE45A1C45E7AD00F8BC38 /* guessGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guessGame.swift; sourceTree = "<group>"; };
 		383DE45C1C45E87F00F8BC38 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		3842B1501C472F29005B595C /* 04.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 04.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +90,7 @@
 				383DE4541C45E76900F8BC38 /* 01.playground */,
 				383DE4551C45E76900F8BC38 /* 02.playground */,
 				383DE4561C45E76900F8BC38 /* 03.playground */,
+				3842B1501C472F29005B595C /* 04.playground */,
 			);
 			path = Tutorial_01;
 			sourceTree = "<group>";
@@ -289,6 +291,7 @@
 				383DE44B1C45E66600F8BC38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

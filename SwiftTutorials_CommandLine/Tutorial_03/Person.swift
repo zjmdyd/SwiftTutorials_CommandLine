@@ -13,7 +13,7 @@ class Person {
     var lastName = ""
     var age = 0
     
-    func input() -> String {
+    func input() -> String {    // 返回值(declared by the ->)类型:String
         let keyboard = NSFileHandle.fileHandleWithStandardInput()
         let inputData = keyboard.availableData
         let rawString = NSString(data: inputData, encoding:NSUTF8StringEncoding)
@@ -45,5 +45,35 @@ class Person {
     
     func printInfo() {
         print("\(firstName) \(lastName) is \(age) years old")
+    }
+}
+
+func testRepeatWhile () {
+    var response: String
+    
+    /**
+     *   数组
+     */
+    var people: [Person] = []
+    
+    /*
+    *   repeat...while... 类似于do...while...
+    */
+    repeat {
+        let p = Person()
+        p.enterInfo()
+        
+        people.append(p)
+        print("Number of People in the database: \(people.count)")
+        p.printInfo()
+        print("Do you want to enter another name? (y/n)")
+        response = p.input()
+    } while(response == "y")
+    
+    /*
+    *   for Loops
+    */
+    for onePerson in people {
+        onePerson.printInfo()
     }
 }

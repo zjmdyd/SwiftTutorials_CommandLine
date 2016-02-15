@@ -54,7 +54,7 @@ batmanCoolness == (supermanCoolness + aquamanCoolness)
 batmanCoolness > aquamanCoolness && supermanCoolness > aquamanCoolness
 batmanCoolness < supermanCoolness || aquamanCoolness < supermanCoolness
 batmanCoolness | supermanCoolness   // 按位或
-if(batmanCoolness > supermanCoolness) {
+if batmanCoolness > supermanCoolness {
     print("batmanCoolness > supermanCoolness")
 }else {
     print("batmanCoolness < supermanCoolness")
@@ -138,6 +138,10 @@ if let num = languagesLearnedNum {
 }else {
     print("It is not a number")
 }
+
+let label = "The width is "
+let width = 98
+let widthLabel = label + String(width)
 
 
 
