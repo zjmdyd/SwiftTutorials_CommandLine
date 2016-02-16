@@ -114,7 +114,7 @@ if let number = optionalNumber {
 var s = "haha"
 print(s)
 ///optional
-var possibleString:String? = "An optional string"
+var possibleString: String? = "An optional string"
 /*
 var possibleString:String?  // Execution was interrupted,在没有初始化的普通可选时加!
 */

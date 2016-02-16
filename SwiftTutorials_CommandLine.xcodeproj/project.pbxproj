@@ -26,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3804075E1C71D11000AE237E /* 05.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 05.playground; sourceTree = "<group>"; };
 		383DE4421C45E66600F8BC38 /* SwiftTutorials_CommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftTutorials_CommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
 		383DE4451C45E66600F8BC38 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		383DE4511C45E73D00F8BC38 /* helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
@@ -35,6 +36,10 @@
 		383DE45A1C45E7AD00F8BC38 /* guessGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guessGame.swift; sourceTree = "<group>"; };
 		383DE45C1C45E87F00F8BC38 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		3842B1501C472F29005B595C /* 04.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 04.playground; sourceTree = "<group>"; };
+		386850AF1C731821009041ED /* 08.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 08.playground; sourceTree = "<group>"; };
+		386850B01C7325E9009041ED /* 09.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 09.playground; sourceTree = "<group>"; };
+		386ED8E41C72EF7B00E3BB04 /* 06.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 06.playground; sourceTree = "<group>"; };
+		386ED8E51C730EAA00E3BB04 /* 07.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 07.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,11 @@
 				383DE4551C45E76900F8BC38 /* 02.playground */,
 				383DE4561C45E76900F8BC38 /* 03.playground */,
 				3842B1501C472F29005B595C /* 04.playground */,
+				3804075E1C71D11000AE237E /* 05.playground */,
+				386ED8E41C72EF7B00E3BB04 /* 06.playground */,
+				386ED8E51C730EAA00E3BB04 /* 07.playground */,
+				386850AF1C731821009041ED /* 08.playground */,
+				386850B01C7325E9009041ED /* 09.playground */,
 			);
 			path = Tutorial_01;
 			sourceTree = "<group>";

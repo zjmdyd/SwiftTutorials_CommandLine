@@ -142,6 +142,14 @@ for i in 0...4 {
 print(loop)
 
 /**
+ 下划线符号_(替代循环中的变量)能够忽略具体的值，并且不提供循环遍历时对值的访问
+ */
+for _ in 0...4 {
+    loop++
+}
+print(loop)
+ 
+/**
 *   元组
 *   Use a tuple to make a compound value—for example, to return multiple values from a function.
 *   The elements of a tuple can be referred to either by name or by number
@@ -241,7 +249,8 @@ hasAnyMatches(nums, conditon: lessThanTen)
 
 /**
 *   Closures
-    Functions are actually a special case of closures: blocks of code that can be called later. The code in a closure has access to things like variables and functions that were available in the scope where the closure was created, even if the closure is in a different scope when it is executed—you saw an example of this already with nested functions. You can write a closure without a name by surrounding code with braces ({}). Use in to separate the arguments and return type from the body.
+    Functions are actually a special case of closures: blocks of code that can be called later. The code in a closure has access to things like variables and functions that were available in the scope where the closure was created, even if the closure is in a different scope when it is executed—you saw an example of this already with nested functions. You can write a closure without a name by surrounding code with braces ({}). 
+/// Use in to separate the arguments and return type from the body.
 */
 var r = nums.map({
     (num: Int) -> Int in
@@ -264,8 +273,12 @@ print(s)
 *  You have several options for writing closures more concisely. When a closure’s type is already known, such as the callback for a delegate, you can omit the type of its parameters, its return type, or both. Single statement closures implicitly return the value of their only statement.
 */
 let mapNum = nums.map({num in 3 * num})
+print(mapNum)
 
-let sortNumbers = nums.sortInPlace()
+/// Swift 自动为内联函数提供了参数名称缩写功能，您可以直接通过$0,$1,$2来顺序调用闭包的参数。
+let sortNumbers = nums.sort{$0 > $1}
+print(sortNumbers)
+
 
 
 
