@@ -36,6 +36,8 @@
 		383DE45A1C45E7AD00F8BC38 /* guessGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guessGame.swift; sourceTree = "<group>"; };
 		383DE45C1C45E87F00F8BC38 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		3842B1501C472F29005B595C /* 04.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 04.playground; sourceTree = "<group>"; };
+		3846C4B61CC885640094E7E0 /* 10.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 10.playground; sourceTree = "<group>"; };
+		3853359E1C7C5B540033F77B /* String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = String.playground; sourceTree = "<group>"; };
 		386850AF1C731821009041ED /* 08.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 08.playground; sourceTree = "<group>"; };
 		386850B01C7325E9009041ED /* 09.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 09.playground; sourceTree = "<group>"; };
 		386ED8E41C72EF7B00E3BB04 /* 06.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 06.playground; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				386ED8E51C730EAA00E3BB04 /* 07.playground */,
 				386850AF1C731821009041ED /* 08.playground */,
 				386850B01C7325E9009041ED /* 09.playground */,
+				3846C4B61CC885640094E7E0 /* 10.playground */,
 			);
 			path = Tutorial_01;
 			sourceTree = "<group>";
@@ -109,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				383DE45A1C45E7AD00F8BC38 /* guessGame.swift */,
+				3853359E1C7C5B540033F77B /* String.playground */,
 			);
 			path = Tutorial_02;
 			sourceTree = "<group>";

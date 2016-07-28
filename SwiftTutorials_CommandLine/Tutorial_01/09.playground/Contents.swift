@@ -41,7 +41,7 @@ print("i = \(i), j = \(j)")
     这里展示了如何写一个非泛型版本的栈，Int值型的栈：
 */
 struct IntStack {
-    var items = [Int]()
+    var items: [Int]
     
     mutating func push(item: Int) {
         items.append(item)
@@ -50,7 +50,17 @@ struct IntStack {
     mutating func pop() -> Int {
         return items.removeLast()
     }
+    
+    init(items: [Int]) {
+        self.items = items
+    }
 }
+
+/// 结构体也同一般类一样, 也可以有init方法
+var s: IntStack = IntStack(items: [1, 2])
+s.push(1)
+print(s.items)
+
 
 /**
 *  这里是一个相同代码的泛型版本：
@@ -81,10 +91,48 @@ for i in 0..<a.count {
     print(a[i])
 }
 
+enum OptionalValue<Wrapped> {
+    case None
+    case Some(Wrapped)
+}
 
+/// You can make generic forms of functions and methods, as well as classes, enumerations, and structures.
+// Reimplement the Swift standard library's optional type
 
+var possibleInteger: OptionalValue<Int> = .None
+possibleInteger = .Some(100)
 
+/**
+*  Use where after the type name to specify a list of requirements—for example, to require the type to implement a protocol, to require two types to be the same, or to require a class to have a particular superclass.
+*/
 
+func anyCommontElements <T: SequenceType, U: SequenceType where T.Generator.Element: Equatable, T.Generator.Element == U.Generator.Element>(lhs: T, _ rhs: U) -> Bool{
+    for lhsItem in lhs {
+        for rhsItem in rhs {
+            if lhsItem == rhsItem {
+                return true
+            }
+        }
+    }
+    
+    return false
+}
+
+/**
+*  在 Swift 中，有一个非常有用的操作符，可以用来快速地对 nil 进行条件判断，那就是 ??。这个操作符可以判断输入并在当左侧的值是非 nil 的 Optional 值时返回其 value，当左侧是 nil 时返回右侧的值，
+*/
+var level: Int?
+var startlevel = 1
+var currentLevel = level ?? startlevel
+
+func ??<T>(optional: T?, @autoclosure defaultValue: () -> T) -> T {
+    switch optional {
+    case .Some(let value):
+        return value
+    case .None:
+        return defaultValue()
+    }
+}
 
 
 

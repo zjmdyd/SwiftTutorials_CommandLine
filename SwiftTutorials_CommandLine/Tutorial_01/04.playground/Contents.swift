@@ -24,6 +24,7 @@ emptyAry.append("aa")
 
 /// 清空数组
 emptyAry = []
+emptyAry.removeAll()
 emptyAry.append("bb")
 
 /**
@@ -39,6 +40,7 @@ for d in dic {
 }
 /// 清空字典
 dic = [:]
+dic.removeAll()
 
 /**
 *   if
@@ -100,6 +102,7 @@ for dic in interestingNumbers {
         }
     }
 }
+
 print(largest)
 
 largest = 0
@@ -119,16 +122,20 @@ print(largest)
 
 var loop = 0
 
+///deprecated
+/*
 for var i = 0; i < 4; i++ {
     loop++
 }
+*/
 
 loop = 0
 /**
 *  Use ..< to make a range that omits its upper value
 */
 for i in 0..<4 {
-    loop++
+//    loop++    // deprecated 3.0
+    loop += 1
 }
 print(loop)
 
@@ -137,7 +144,8 @@ loop = 0
 *  use ... to make a range that includes both values
 */
 for i in 0...4 {
-    loop++
+//    loop++    // deprecated 3.0
+    loop += 1
 }
 print(loop)
 
@@ -145,7 +153,8 @@ print(loop)
  下划线符号_(替代循环中的变量)能够忽略具体的值，并且不提供循环遍历时对值的访问
  */
 for _ in 0...4 {
-    loop++
+//    loop++    // deprecated 3.0
+    loop += 1
 }
 print(loop)
  
@@ -247,10 +256,59 @@ func lessThanTen(num: Int) -> Bool {
 var nums = [20, 19, 7, 11]
 hasAnyMatches(nums, conditon: lessThanTen)
 
+var luckyNumber = 7
+
+/* deprecated
+func incrementor(var variable: Int) -> Int {
+    return ++variable
+}
+ let newNumber = incrementor(luckyNumber)
+ // newNumber = 8
+ */
+
+/**
+func incrementor(variable: Int) -> Int {
+    return ++variable
+}
+默认认为是不可变的，也就是用 let 进行声明的。这样不仅可以确保安全，也能在编译器的性能优化上更有作为。在方法的参数上也是如此，我们不写修饰符的话，默认情况下所有参数都是 let 的
+等效为
+func incrementor(let variable: Int) -> Int {
+    return ++variable
+}
+*/
+
+print(luckyNumber)
+// luckyNumber 还是 7
+/**
+*  正如上面的例子，我们将参数写作 var 后，通过调用返回的值是正确的，而 luckyNumber 还是保持了原来的值。这说明 var 只是在方法内部作用，而不直接影响输入的值。有些时候我们会希望在方法内部直接修改输入的值，这时候我们可以使用 inout 来对参数进行修饰：
+*/
+func incrementor(inout variable: Int) {
+    variable += 1
+}
+///因为在函数内部就更改了值，所以也不需要返回了。调用也要改变为相应的形式，在前面加上 & 符号：
+
+var luckyNumber2 = 7
+incrementor(&luckyNumber)
+
+print(luckyNumber)
+// luckyNumber = 8
+
+func makeIncrementor(addNumber: Int) -> ((inout Int) -> ()) {
+    func incrementor(inout variable: Int) -> () {
+        variable += addNumber;
+    }
+    return incrementor;
+}
+
+var ic = makeIncrementor(1)
+var ii = 3
+ic(&ii)
+print(ii)
+
 /**
 *   Closures
-    Functions are actually a special case of closures: blocks of code that can be called later. The code in a closure has access to things like variables and functions that were available in the scope where the closure was created, even if the closure is in a different scope when it is executed—you saw an example of this already with nested functions. You can write a closure without a name by surrounding code with braces ({}). 
-/// Use in to separate the arguments and return type from the body.
+    Functions are actually a special case of closures: blocks of code that can be called later. The code in a closure has access to things like variables and functions that were available in the scope where the closure was created, even if the closure is in a different scope when it is executed—you saw an example of this already with nested functions. You can write a closure without a name by surrounding code with braces ({}).
+/// Use in to separate the arguments and return type from the body. 使用关键字in来把参数、返回值与body分开
 */
 var r = nums.map({
     (num: Int) -> Int in
