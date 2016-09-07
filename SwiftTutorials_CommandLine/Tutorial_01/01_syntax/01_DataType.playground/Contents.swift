@@ -13,6 +13,7 @@ var hungry:Bool = true
 var name:String = "Martin"
 name = "Kobe"
 
+
 /*
 Here is a list of some of the basic data types that Swift has to offer:
 Int – whole numbers, or integers
@@ -29,13 +30,16 @@ let pi:Double = 3.14
 let captain:String = "BeiJing"
 let favoriteNumber:Int = 24
 
+
 /**
 *   类型推断
+*   If the initial value doesn’t provide enough information (or if there is no initial value), specify the type by writing it after the variable, separated by a colon(冒号).
 */
 var luckyNumber = 7 //
 var PI = 3.14
+let explicitDouble: Double = 70
 
-/*  Comparison Operators
+/*  Comparison Operators ()
 Just like Playground can do simple math operations as explained earlier, it can compare numbers and values. Some of these operators include:
 > Greater Than
 < Less Than
@@ -62,71 +66,6 @@ if batmanCoolness > supermanCoolness {
 print("hello world")
 print(batmanCoolness)
 
-/**
-*  String Interpolation
-*/
-var apples = 5
-print("Shally has \(apples)aplles")
-print("Shally has \(apples - 5)aplles")
-
-/**
-*  eg
-*/
-var John = 95
-var Sam = 85
-if(John > Sam) {
-    print("John grade \(John) grater than Sam grade \(Sam)")
-}else if(John < Sam) {
-    print("John grade \(John) less than Sam grade \(Sam)")
-}else {
-    print("John grade \(John) equal to Sam grade \(Sam)")
-}
-
-/**
-*  While
-*/
-var donutsLeft = 6
-while (donutsLeft > 0) {
-    print("You have \(donutsLeft) donuts left")
-    donutsLeft--;
-    print("You eat one donut")
-}
-print("You are all out of donuts")
-
-/**
-*  Optionals: Optionals are variables that can either contain a value or contain nil.
-*/
-var optionalNumber : Int? = 5   // The ? is what declares the value as an optional.
-optionalNumber = nil
-if let number = optionalNumber {
-    print("It is a number")
-}else {
-    print("It is not a number")
-}
-
-/**
-*   implicitly unwrapped optionals(隐式解析可选)
-一个隐式解析可选其实就是一个普通的可选，但是可以被当做非可选来使用，并不需要每次都使用解析来获取可选值
-
-如果一个变量之后可能变成nil的话请不要使用隐式解析可选。
-如果你需要在变量的生命周期中判断是否是nil的话，请使用普通可选类型
-*/
-var s = "haha"
-print(s)
-///optional
-var possibleString: String? = "An optional string"
-/*
-var possibleString:String?  // Execution was interrupted,在没有初始化的普通可选时加!
-*/
-print(possibleString)
-/**
-*   你可以把隐式解析可选当做一个可以自动解析的可选。
-你要做的只是声明的时候把感叹号放到类型的结尾，而不是每次取值的可选名字的结尾
-*/
-print(possibleString!)
-
-var assumedString:String! = "An implicitly unwrapped optional string"
-print(assumedString)
 
 /**
 *  Conversion Between Data Types(类型转换)
@@ -142,6 +81,80 @@ if let num = languagesLearnedNum {
 let label = "The width is "
 let width = 98
 let widthLabel = label + String(width)
+
+
+/**
+ *  String Interpolation(插补) --> 字符串拼接
+ *   There’s an even simpler way to include values in strings: Write the value in parentheses(圆括号), and write a backslash (\) before the parentheses
+ */
+var apples = 5
+print("Shally has \(apples)aplles")
+print("Shally has \(apples - 5)aplles")
+
+/**
+ *  eg
+ */
+var John = 95
+var Sam = 85
+if(John > Sam) {
+    print("John grade \(John) grater than Sam grade \(Sam)")
+}else if(John < Sam) {
+    print("John grade \(John) less than Sam grade \(Sam)")
+}else {
+    print("John grade \(John) equal to Sam grade \(Sam)")
+}
+
+
+/**
+ *** 数组 **
+ *  Create arrays and dictionaries using brackets ([]), and access their elements by writing the index or key in brackets. A comma is allowed after the last element.
+ */
+var shoppingList = ["aa", "nn", "mm"]
+for a in shoppingList {
+    print(a)
+}
+
+shoppingList[1] = "haha"
+for a in shoppingList {
+    print(a)
+}
+
+/// 初始化数组1
+var emptyArray = [String]()
+emptyArray.append("a")
+
+/// 初始化数组2
+var emptyAry: [String] = []
+emptyAry.append("aa")
+
+/// 清空数组
+emptyAry = []
+emptyAry.removeAll()
+emptyAry.append("bb")
+
+/**
+ *** 字典 **
+ */
+var dic = [
+    "key1" : "value1",
+    "key2" : "value2"
+]
+dic["key3"] = "value3"
+for d in dic {
+    print("key = ", d.0, ", value = ", d.1)  // 0表示key, 1表示value
+}
+
+/// 初始化字典1
+var dic2 = [:]
+dic["k1"] = "v1"
+
+/// 初始化字典2
+var dic3:[Int:Float] = [:]
+dic3[1] = 1
+
+/// 清空字典
+dic = [:]
+dic.removeAll()
 
 
 

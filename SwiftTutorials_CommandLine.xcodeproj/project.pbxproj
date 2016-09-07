@@ -26,22 +26,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3804075E1C71D11000AE237E /* 05.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 05.playground; sourceTree = "<group>"; };
 		383DE4421C45E66600F8BC38 /* SwiftTutorials_CommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftTutorials_CommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
 		383DE4451C45E66600F8BC38 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		383DE4511C45E73D00F8BC38 /* helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
-		383DE4541C45E76900F8BC38 /* 01.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 01.playground; sourceTree = "<group>"; };
 		383DE4551C45E76900F8BC38 /* 02.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 02.playground; sourceTree = "<group>"; };
 		383DE4561C45E76900F8BC38 /* 03.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 03.playground; sourceTree = "<group>"; };
 		383DE45A1C45E7AD00F8BC38 /* guessGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guessGame.swift; sourceTree = "<group>"; };
 		383DE45C1C45E87F00F8BC38 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		3842B1501C472F29005B595C /* 04.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 04.playground; sourceTree = "<group>"; };
-		3846C4B61CC885640094E7E0 /* 10.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 10.playground; sourceTree = "<group>"; };
 		3853359E1C7C5B540033F77B /* String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = String.playground; sourceTree = "<group>"; };
-		386850AF1C731821009041ED /* 08.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 08.playground; sourceTree = "<group>"; };
-		386850B01C7325E9009041ED /* 09.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 09.playground; sourceTree = "<group>"; };
-		386ED8E41C72EF7B00E3BB04 /* 06.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 06.playground; sourceTree = "<group>"; };
-		386ED8E51C730EAA00E3BB04 /* 07.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 07.playground; sourceTree = "<group>"; };
+		38535DD11D7FE5A30078624E /* 07_Protocols and Extensions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "07_Protocols and Extensions.playground"; sourceTree = "<group>"; };
+		38535ECA1D804B510078624E /* 02_Operator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 02_Operator.playground; sourceTree = "<group>"; };
+		38535ECC1D804E110078624E /* 08_ErrorHandling.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 08_ErrorHandling.playground; sourceTree = "<group>"; };
+		386850B01C7325E9009041ED /* 12.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 12.playground; sourceTree = "<group>"; };
+		387B82491D4AF09F000C2221 /* 03_ControlFlow.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 03_ControlFlow.playground; sourceTree = "<group>"; };
+		387B824A1D4B02B1000C2221 /* 04_Function&Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "04_Function&Closures.playground"; sourceTree = "<group>"; };
+		387B824B1D4B2857000C2221 /* labels_1.1-499x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "labels_1.1-499x1024.png"; sourceTree = "<group>"; };
+		38E2D4DA1D70337F00812BE5 /* 06_Enumerations&Structures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "06_Enumerations&Structures.playground"; sourceTree = "<group>"; };
+		38F7EAD81D4A325200E0A4A1 /* 01_DataType.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 01_DataType.playground; sourceTree = "<group>"; };
+		38FEEB2B1D518AC800380EAA /* 05_Objects&Classes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "05_Objects&Classes.playground"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,16 +96,10 @@
 		383DE4531C45E76900F8BC38 /* Tutorial_01 */ = {
 			isa = PBXGroup;
 			children = (
-				383DE4541C45E76900F8BC38 /* 01.playground */,
+				38F7EAD71D4A325200E0A4A1 /* 01_syntax */,
 				383DE4551C45E76900F8BC38 /* 02.playground */,
 				383DE4561C45E76900F8BC38 /* 03.playground */,
-				3842B1501C472F29005B595C /* 04.playground */,
-				3804075E1C71D11000AE237E /* 05.playground */,
-				386ED8E41C72EF7B00E3BB04 /* 06.playground */,
-				386ED8E51C730EAA00E3BB04 /* 07.playground */,
-				386850AF1C731821009041ED /* 08.playground */,
-				386850B01C7325E9009041ED /* 09.playground */,
-				3846C4B61CC885640094E7E0 /* 10.playground */,
+				386850B01C7325E9009041ED /* 12.playground */,
 			);
 			path = Tutorial_01;
 			sourceTree = "<group>";
@@ -123,6 +119,22 @@
 				383DE45C1C45E87F00F8BC38 /* Person.swift */,
 			);
 			path = Tutorial_03;
+			sourceTree = "<group>";
+		};
+		38F7EAD71D4A325200E0A4A1 /* 01_syntax */ = {
+			isa = PBXGroup;
+			children = (
+				387B824B1D4B2857000C2221 /* labels_1.1-499x1024.png */,
+				38F7EAD81D4A325200E0A4A1 /* 01_DataType.playground */,
+				38535ECA1D804B510078624E /* 02_Operator.playground */,
+				387B82491D4AF09F000C2221 /* 03_ControlFlow.playground */,
+				387B824A1D4B02B1000C2221 /* 04_Function&Closures.playground */,
+				38FEEB2B1D518AC800380EAA /* 05_Objects&Classes.playground */,
+				38E2D4DA1D70337F00812BE5 /* 06_Enumerations&Structures.playground */,
+				38535DD11D7FE5A30078624E /* 07_Protocols and Extensions.playground */,
+				38535ECC1D804E110078624E /* 08_ErrorHandling.playground */,
+			);
+			path = 01_syntax;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
