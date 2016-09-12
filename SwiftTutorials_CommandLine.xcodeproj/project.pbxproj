@@ -41,6 +41,7 @@
 		387B82491D4AF09F000C2221 /* 03_ControlFlow.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 03_ControlFlow.playground; sourceTree = "<group>"; };
 		387B824A1D4B02B1000C2221 /* 04_Function&Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "04_Function&Closures.playground"; sourceTree = "<group>"; };
 		387B824B1D4B2857000C2221 /* labels_1.1-499x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "labels_1.1-499x1024.png"; sourceTree = "<group>"; };
+		387D37CB1D86E7E3000098AC /* 09_Generics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 09_Generics.playground; sourceTree = "<group>"; };
 		38E2D4DA1D70337F00812BE5 /* 06_Enumerations&Structures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "06_Enumerations&Structures.playground"; sourceTree = "<group>"; };
 		38F7EAD81D4A325200E0A4A1 /* 01_DataType.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 01_DataType.playground; sourceTree = "<group>"; };
 		38FEEB2B1D518AC800380EAA /* 05_Objects&Classes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "05_Objects&Classes.playground"; sourceTree = "<group>"; };
@@ -133,6 +134,7 @@
 				38E2D4DA1D70337F00812BE5 /* 06_Enumerations&Structures.playground */,
 				38535DD11D7FE5A30078624E /* 07_Protocols and Extensions.playground */,
 				38535ECC1D804E110078624E /* 08_ErrorHandling.playground */,
+				387D37CB1D86E7E3000098AC /* 09_Generics.playground */,
 			);
 			path = 01_syntax;
 			sourceTree = "<group>";
