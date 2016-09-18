@@ -39,7 +39,7 @@ class Person {
         
         let userInput = Int(input())
         if let number = userInput {
-            age = number;
+            age = number
         }
     }
     

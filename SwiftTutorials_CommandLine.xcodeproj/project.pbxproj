@@ -37,7 +37,6 @@
 		38535DD11D7FE5A30078624E /* 07_Protocols and Extensions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "07_Protocols and Extensions.playground"; sourceTree = "<group>"; };
 		38535ECA1D804B510078624E /* 02_Operator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 02_Operator.playground; sourceTree = "<group>"; };
 		38535ECC1D804E110078624E /* 08_ErrorHandling.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 08_ErrorHandling.playground; sourceTree = "<group>"; };
-		386850B01C7325E9009041ED /* 12.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 12.playground; sourceTree = "<group>"; };
 		387B82491D4AF09F000C2221 /* 03_ControlFlow.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 03_ControlFlow.playground; sourceTree = "<group>"; };
 		387B824A1D4B02B1000C2221 /* 04_Function&Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "04_Function&Closures.playground"; sourceTree = "<group>"; };
 		387B824B1D4B2857000C2221 /* labels_1.1-499x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "labels_1.1-499x1024.png"; sourceTree = "<group>"; };
@@ -100,7 +99,6 @@
 				38F7EAD71D4A325200E0A4A1 /* 01_syntax */,
 				383DE4551C45E76900F8BC38 /* 02.playground */,
 				383DE4561C45E76900F8BC38 /* 03.playground */,
-				386850B01C7325E9009041ED /* 12.playground */,
 			);
 			path = Tutorial_01;
 			sourceTree = "<group>";
