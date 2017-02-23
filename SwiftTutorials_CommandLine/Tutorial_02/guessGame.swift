@@ -8,9 +8,10 @@
 
 import Foundation
 
+// MARK:
 func guessGame() {
     
-    let answer = randomIntBetween(1, high: 100)
+    let answer = randomIntBetween(low: 1, high: 100)
     var turn = 1
     
     while(true) {
@@ -32,8 +33,13 @@ func guessGame() {
             print("Invalid input! please enter a number")
             continue;
         }
-        turn++;
+        turn += 1;
     }
     
     print("It took you \(turn) tries")
+}
+
+// MARK:
+func Test() -> Void {
+    
 }

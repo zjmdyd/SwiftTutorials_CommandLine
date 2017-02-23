@@ -24,7 +24,7 @@ print(teamScore)
  */
 var optionString: String? = "hello"
 print(optionString == nil)
-
+// annotation (注释注解)
 var optionName: String? = "John"
 var greeting = "Hello"
 if let name = optionName {
@@ -50,6 +50,10 @@ let informalGreeting = "Hi \( nickName ?? fullName)"
     After executing the code inside the switch case that matched, the program exits from the switch statement. Execution doesn’t continue to the next case, so there is no need to explicitly break out of the switch at the end of each case’s code.
  
     swutch must exhaustive, consider adding a default clause(在不加default的时候会提示)
+ 
+ Swift 中的switch不会从上一个 case 分支落入到下一个 case 分支中。相反，只要第一个匹配到的 case 分支完成了它需要执行的语句，整个switch代码块完成了它的执行。相比之下，C 语言要求你显式地插入break语句到每个 case 分支的末尾来阻止自动落入到下一个 case 分支中。Swift 的这种避免默认落入到下一个分支中的特性意味着它的switch 功能要比 C 语言的更加清晰和可预测，可以避免无意识地执行多个 case 分支从而引发的错误。
+ 
+ 如果你确实需要 C 风格的贯穿的特性，你可以在每个需要该特性的 case 分支中使用fallthrough关键字。下面的例子使用fallthrough来创建一个数字的描述语句。
  */
 
 let vegetable = "red pepper"
@@ -60,6 +64,7 @@ case "cucumber", "watercress":
     print("That would make a good tea sandwich.")
 case let x where x.hasSuffix("pepper"):
     print("Is it a spicy \(x)?")
+    fallthrough                                         // 贯穿
 default:
     print("Everything tastes good in soup.")
 }
@@ -86,8 +91,7 @@ for dic in interestingNumbers {
     }
 }
 
-print(largest)
-
+print("largest = \(largest)")
 largest = 0
 /**
  *  遍历字典方法2
@@ -178,7 +182,7 @@ var possibleString: String? = "An optional string"
  var possibleString:String?  // Execution was interrupted,在没有初始化的普通可选时加!
  */
 print(possibleString)
-// print(possibleString?)  // error : ? must be follwed by a call,member lookup,or subscript
+// print(possibleString)  // error : ? must be follwed by a call,member lookup,or subscript
 /**
  *   你可以把隐式解析可选当做一个可以自动解析的可选。
     你要做的只是声明的时候把感叹号放到类型的结尾，而不是每次取值时都要在待取值变量的结尾加感叹号

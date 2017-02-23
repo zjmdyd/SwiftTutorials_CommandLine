@@ -8,7 +8,7 @@ func randomIntBetween(low:Int, high:Int) -> Int {
 }
 
 var guess = 7
-let answer = randomIntBetween(1, high: 100)
+let answer = randomIntBetween(low: 1, high: 100)
 
 if(guess < answer) {
     print("Lower")

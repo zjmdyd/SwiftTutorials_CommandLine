@@ -101,7 +101,6 @@ class EquilateralTriangle: NameShape {
             sideLength = newV / Double(numberOfSides)
          }
          */
-
     }
     
     override func simpleDescription() -> String {
@@ -148,8 +147,8 @@ var triangleAndSquare = TriangleAndSquare(size: 10, name: "another test shape")
 triangleAndSquare.triangle.sideLength   // 11
 triangleAndSquare.square.sideLength     // 10, 上面两值不一样,验证下面的第5条性质
 triangleAndSquare.square = Square(sideLength: 20, name: "large square")
-triangleAndSquare.triangle.sideLength   // 20
 triangleAndSquare.square.sideLength     // 20
+triangleAndSquare.triangle.sideLength   // 20
 
 /**
  Swift - 属性观察者（willSet与didSet）

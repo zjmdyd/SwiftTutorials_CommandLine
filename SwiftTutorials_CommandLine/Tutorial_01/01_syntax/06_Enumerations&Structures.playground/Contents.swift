@@ -41,10 +41,11 @@ jack.rawValue   // 2
 
 /**
  * 
- Inside the switch, the enumeration case is referred to by the abbreviated(简短的) form .Ace because the value of self is already known to be a suit. You can use the abbreviated form anytime the value’s type is already known.
+ Inside the switch, the enumeration case is referred to by the abbreviated(简短的) form .Ace because the value of self is already known to be a suit. You can use the abbreviated(简短的) form anytime the value’s type is already known.
  */
 /**
  *  In the example above, the raw-value type of the enumeration is Int, so you only have to specify the first raw value. The rest of the raw values are assigned in order. You can also use strings or floating-point numbers as the raw type of an enumeration. Use the rawValue property to access the raw value of an enumeration case.
+ // Enum case must declare a raw value when the preceding raw value is not an integer (如果前面的枚举值不是整形数据那么必须为后面的每个枚举值赋初始值)
  
  Use the init?(rawValue:) initializer to make an instance of an enumeration from a raw value.
  */
@@ -153,7 +154,9 @@ var dd = ASCIIControlCharacter.Tab
 dd.rawValue
 /**
  *  注意，原始值是不相同关联值。原始值设置为预填充的值时，应先在你的代码中定义枚举，像上述三个ASCII码。对于一个特定的枚举成员的原始值始终是相同的。
-    原始值可以是字符串，字符，或任何整数或浮点数类型。每个原始值必须在它的枚举中唯一声明。当整数被用于原始值，如果其他​​枚举成员没有值时，它们自动递增。
+    原始值可以是字符串，字符，或任何整数或浮点数类型。
+    每个原始值必须在它的枚举中唯一声明。
+    当整数被用于原始值，如果其他​​枚举成员没有值时，它们自动递增。
  */
 
 

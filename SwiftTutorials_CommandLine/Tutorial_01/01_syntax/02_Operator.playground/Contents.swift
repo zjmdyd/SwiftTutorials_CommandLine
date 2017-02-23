@@ -8,10 +8,15 @@ var jj = 0^1
  
 var a = 1
 var b = 2
+var c = 1.0
+var d = 1.0
+//c % d
+Int(c) % Int(d) // swift中的取余运算只能适用于整数
 
 a = a ^ b
 b = a ^ b
 a = a ^ b
+
 
 
 /**
@@ -46,11 +51,12 @@ func incrementBy(amount: Int, numberOfTimes: Int) {
     count += amount * numberOfTimes
 }
 //incrementBy(1, 3)   // Missing argument label 'numberOfTimes:' in call
-incrementBy(1, numberOfTimes: 3)
+
+incrementBy(amount: 1, numberOfTimes: 3)
 
 ///重载
 func incrementBy(amount: Int, _ numberOfTimes: Int) {
     count += amount * numberOfTimes
 }
-incrementBy(1, 3)
+incrementBy(amount: 1, 3)
 

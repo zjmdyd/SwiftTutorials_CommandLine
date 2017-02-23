@@ -9,7 +9,8 @@ import UIKit
 func greet(name: String, day: String) -> String {
     return "Hello \(name), today is \(day)."
 }
-greet("Bob", day: "Tuesday")
+greet(name: "Bob", day: "Tuesday")
+// greet("Bob", day: "Tuesday")  // swift 2
 
 /**
  func foo(x: Int)       foo(2)              Omit label
@@ -45,7 +46,7 @@ func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int) {
     return(min, max, sum)
 }
 
-let statistics = calculateStatistics([5, 3, 100, 4, 6])
+let statistics = calculateStatistics(scores: [5, 3, 100, 4, 6])
 print(statistics.sum)
 print(statistics.2)
 
@@ -71,8 +72,8 @@ func sumOf(numbers: [Int]) -> Int {
 }
 
 sumOf()
-sumOf(22, 11, 33)
-sumOf([1, 2, 3])
+sumOf(numbers: 22, 11, 33)
+sumOf(numbers: [1, 2, 3])
 
 /** 函数的嵌套
  *   Functions can be nested.
@@ -125,7 +126,7 @@ func lessThanTen(num: Int) -> Bool {
     return num < 10
 }
 var nums = [20, 19, 7, 11]
-hasAnyMatches(nums, conditon: lessThanTen)
+hasAnyMatches(list: nums, conditon: lessThanTen)
 
 
 var luckyNumber = 7
@@ -134,7 +135,7 @@ func incrementor(variable: Int) -> Int {
     variable += 1
     return variable
 }
-let newNumber = incrementor(luckyNumber)
+let newNumber = incrementor(variable: luckyNumber)
 /**
     默认认为是不可变的，也就是用 let 进行声明的。这样不仅可以确保安全，也能在编译器的性能优化上更有作为。在方法的参数上也是如此，我们不写修饰符的话，默认情况下所有参数都是 let 的
     等效为
@@ -149,21 +150,22 @@ print(luckyNumber)
 /**
  *  正如上面的例子，我们将参数写作 var 后，通过调用返回的值是正确的，而 luckyNumber 还是保持了原来的值。这说明 var 只是在方法内部作用，而不直接影响输入的值。有些时候我们会希望在方法内部直接修改输入的值，这时候我们可以使用 inout 来对参数进行修饰：
  */
-func incrementor(inout variable: Int) -> () {
+func incrementor(variable: inout Int) -> () {
     variable += 1
-}
+}// inout before a parameter name is not allowed, place it before the parameter type instead
+
 ///因为在函数内部就更改了值，所以也不需要返回了。调用也要改变为相应的形式，在前面加上 & 符号：
-incrementor(&luckyNumber)
+incrementor(variable: &luckyNumber)
 print(luckyNumber)
 
 func makeIncrementor(addNumber: Int) -> ((inout Int) -> ()) {
-    func incrementor(inout variable: Int) -> () {
+    func incrementor( variable: inout Int) -> () {
         variable += addNumber;
     }
     return incrementor;
 }
 
-var ic = makeIncrementor(1)
+var ic = makeIncrementor(addNumber: 1)
 var ii = 3
 ic(&ii)
 print(ii)
@@ -205,7 +207,8 @@ print(mapNum)
  *  You can refer to parameters by number instead of by name—this approach is especially useful in very short closures. A closure passed as the last argument to a function can appear immediately after the parentheses. When a closure is the only argument to a function, you can omit the parentheses(圆括号) entirely.
  */
 /// Swift 自动为内联函数提供了参数名称缩写功能，您可以直接通过$0,$1,$2来顺序调用闭包的参数。
-let sortNumbers = nums.sort{$0 > $1}
+
+let sortNumbers = nums.sorted{$0 > $1}
 print(sortNumbers)
 
 

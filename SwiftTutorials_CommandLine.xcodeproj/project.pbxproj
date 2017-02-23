@@ -29,8 +29,6 @@
 		383DE4421C45E66600F8BC38 /* SwiftTutorials_CommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftTutorials_CommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
 		383DE4451C45E66600F8BC38 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		383DE4511C45E73D00F8BC38 /* helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
-		383DE4551C45E76900F8BC38 /* 02.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 02.playground; sourceTree = "<group>"; };
-		383DE4561C45E76900F8BC38 /* 03.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 03.playground; sourceTree = "<group>"; };
 		383DE45A1C45E7AD00F8BC38 /* guessGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guessGame.swift; sourceTree = "<group>"; };
 		383DE45C1C45E87F00F8BC38 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		3853359E1C7C5B540033F77B /* String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = String.playground; sourceTree = "<group>"; };
@@ -42,6 +40,9 @@
 		387B824B1D4B2857000C2221 /* labels_1.1-499x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "labels_1.1-499x1024.png"; sourceTree = "<group>"; };
 		387D37CB1D86E7E3000098AC /* 09_Generics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 09_Generics.playground; sourceTree = "<group>"; };
 		38E2D4DA1D70337F00812BE5 /* 06_Enumerations&Structures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "06_Enumerations&Structures.playground"; sourceTree = "<group>"; };
+		38E87D931DC33629009A527A /* 03.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 03.playground; sourceTree = "<group>"; };
+		38E87D941DC33629009A527A /* 02.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 02.playground; sourceTree = "<group>"; };
+		38E87D981DC33746009A527A /* 01_Constants&Variables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "01_Constants&Variables.playground"; sourceTree = "<group>"; };
 		38F7EAD81D4A325200E0A4A1 /* 01_DataType.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 01_DataType.playground; sourceTree = "<group>"; };
 		38FEEB2B1D518AC800380EAA /* 05_Objects&Classes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "05_Objects&Classes.playground"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,8 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				38F7EAD71D4A325200E0A4A1 /* 01_syntax */,
-				383DE4551C45E76900F8BC38 /* 02.playground */,
-				383DE4561C45E76900F8BC38 /* 03.playground */,
+				38E87D951DC33655009A527A /* 02_syntax */,
 			);
 			path = Tutorial_01;
 			sourceTree = "<group>";
@@ -107,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				383DE45A1C45E7AD00F8BC38 /* guessGame.swift */,
+				38E87D931DC33629009A527A /* 03.playground */,
+				38E87D941DC33629009A527A /* 02.playground */,
 				3853359E1C7C5B540033F77B /* String.playground */,
 			);
 			path = Tutorial_02;
@@ -118,6 +120,14 @@
 				383DE45C1C45E87F00F8BC38 /* Person.swift */,
 			);
 			path = Tutorial_03;
+			sourceTree = "<group>";
+		};
+		38E87D951DC33655009A527A /* 02_syntax */ = {
+			isa = PBXGroup;
+			children = (
+				38E87D981DC33746009A527A /* 01_Constants&Variables.playground */,
+			);
+			path = 02_syntax;
 			sourceTree = "<group>";
 		};
 		38F7EAD71D4A325200E0A4A1 /* 01_syntax */ = {
@@ -169,6 +179,7 @@
 				TargetAttributes = {
 					383DE4411C45E66600F8BC38 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -288,6 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -295,6 +307,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

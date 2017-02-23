@@ -145,12 +145,13 @@ for d in dic {
 }
 
 /// 初始化字典1
-var dic2 = [:]
+var dic2 = [String : Float]()
+// var dic2 = [:]  // swift 2
 dic["k1"] = "v1"
 
 /// 初始化字典2
 var dic3:[Int:Float] = [:]
-dic3[1] = 1
+dic3[1] = 1.0
 
 /// 清空字典
 dic = [:]
