@@ -104,7 +104,6 @@ if(John > Sam) {
     print("John grade \(John) equal to Sam grade \(Sam)")
 }
 
-
 /**
  *** 数组 **
  *  Create arrays and dictionaries using brackets ([]), and access their elements by writing the index or key in brackets. A comma is allowed after the last element.

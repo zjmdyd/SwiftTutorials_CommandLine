@@ -72,7 +72,7 @@ func sumOf(numbers: [Int]) -> Int {
 }
 
 sumOf()
-sumOf(numbers: 22, 11, 33)
+sumOf(numbers: 22, 11, 33, 33)
 sumOf(numbers: [1, 2, 3])
 
 /** 函数的嵌套
@@ -204,7 +204,7 @@ let mapNum = nums.map({
 print(mapNum)
 
 /**
- *  You can refer to parameters by number instead of by name—this approach is especially useful in very short closures. A closure passed as the last argument to a function can appear immediately after the parentheses. When a closure is the only argument to a function, you can omit the parentheses(圆括号) entirely.
+ *  You can refer to parameters by number instead of by name—this approach is especially useful in very short closures. A closure passed as the last argument to a function can appear immediately after the parentheses(圆括号). When a closure is the only argument to a function, you can omit the parentheses(圆括号) entirely.
  */
 /// Swift 自动为内联函数提供了参数名称缩写功能，您可以直接通过$0,$1,$2来顺序调用闭包的参数。
 

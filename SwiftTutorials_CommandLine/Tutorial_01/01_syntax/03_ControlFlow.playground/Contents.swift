@@ -181,13 +181,14 @@ var possibleString: String? = "An optional string"
 /*
  var possibleString:String?  // Execution was interrupted,在没有初始化的普通可选时加!
  */
-print(possibleString)
+print(possibleString!)
 // print(possibleString)  // error : ? must be follwed by a call,member lookup,or subscript
 /**
  *   你可以把隐式解析可选当做一个可以自动解析的可选。
     你要做的只是声明的时候把感叹号放到类型的结尾，而不是每次取值时都要在待取值变量的结尾加感叹号
  */
 print(possibleString!)
+// OV(old version) print(possibleString)
 
 /// implicitly unwrapped optional
 var assumedString:String! = "An implicitly unwrapped optional string"
