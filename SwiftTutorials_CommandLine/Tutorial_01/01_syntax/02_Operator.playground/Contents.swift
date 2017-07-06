@@ -3,9 +3,9 @@
 import UIKit
 
 /// 位运算符
-var kk = 1^1
+var kk = 1^1    // 异或
 var jj = 0^1
- 
+
 var a = 1
 var b = 2
 var c = 1.0
@@ -53,7 +53,7 @@ func incrementBy(amount: Int, numberOfTimes: Int) {
 
 incrementBy(amount: 1, numberOfTimes: 3)
 
-///重载
+/// 重载
 func incrementBy(amount: Int, _ numberOfTimes: Int) {
     count += amount * numberOfTimes
 }

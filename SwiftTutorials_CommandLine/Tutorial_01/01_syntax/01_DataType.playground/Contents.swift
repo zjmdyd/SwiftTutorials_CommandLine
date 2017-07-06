@@ -71,7 +71,7 @@ print(batmanCoolness)
 *  Conversion Between Data Types(类型转换)
 */
 var languagesLearned =  "3"
-var languagesLearnedNum : Int? = Int(languagesLearned)
+var languagesLearnedNum: Int? = Int(languagesLearned)
 if let num = languagesLearnedNum {
     print("It is a number")
 }else {
@@ -106,7 +106,7 @@ if(John > Sam) {
 
 /**
  *** 数组 **
- *  Create arrays and dictionaries using brackets ([]), and access their elements by writing the index or key in brackets. A comma is allowed after the last element.
+ *  Create arrays and dictionaries using brackets ([]), and access their elements by writing the index or key in brackets. A comma(逗号) is allowed after the last element.
  */
 var shoppingList = ["aa", "nn", "mm"]
 for a in shoppingList {
@@ -143,6 +143,10 @@ for d in dic {
     print("key = ", d.0, ", value = ", d.1)  // 0表示key, 1表示value
 }
 
+for (_, obj) in dic {
+    print(obj)
+}
+
 /// 初始化字典1
 var dic2 = [String : Float]()
 // var dic2 = [:]  // swift 2
@@ -152,9 +156,18 @@ dic["k1"] = "v1"
 var dic3:[Int:Float] = [:]
 dic3[1] = 1.0
 
+/// 初始化字典3
+var dic4 = Dictionary<String, Int>()
+dic4["a"] = 1
+
+var val = dic4.keys
+print(val)
+
 /// 清空字典
 dic = [:]
 dic.removeAll()
+
+
 
 
 

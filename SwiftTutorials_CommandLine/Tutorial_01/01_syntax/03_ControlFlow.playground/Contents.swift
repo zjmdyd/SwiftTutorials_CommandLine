@@ -30,7 +30,7 @@ var greeting = "Hello"
 if let name = optionName {
     greeting = "Hello, \(name)"
 }else {
-    greeting = "Hello, \(optionName)"
+    greeting = "Hello, \(optionName!)"
 }
 
 
@@ -41,7 +41,7 @@ if let name = optionName {
  */
 let nickName: String? = nil
 let fullName: String? = "John"
-let informalGreeting = "Hi \( nickName ?? fullName)"
+let informalGreeting = "Hi \( nickName ?? fullName!)"   // ?? 给默认值
 
 
 /****   Switches    *****
@@ -49,7 +49,7 @@ let informalGreeting = "Hi \( nickName ?? fullName)"
  
     After executing the code inside the switch case that matched, the program exits from the switch statement. Execution doesn’t continue to the next case, so there is no need to explicitly break out of the switch at the end of each case’s code.
  
-    swutch must exhaustive, consider adding a default clause(在不加default的时候会提示)
+    switch must exhaustive, consider adding a default clause(在不加default的时候会提示)
  
  Swift 中的switch不会从上一个 case 分支落入到下一个 case 分支中。相反，只要第一个匹配到的 case 分支完成了它需要执行的语句，整个switch代码块完成了它的执行。相比之下，C 语言要求你显式地插入break语句到每个 case 分支的末尾来阻止自动落入到下一个 case 分支中。Swift 的这种避免默认落入到下一个分支中的特性意味着它的switch 功能要比 C 语言的更加清晰和可预测，可以避免无意识地执行多个 case 分支从而引发的错误。
  
@@ -63,7 +63,7 @@ case "celery":
 case "cucumber", "watercress":
     print("That would make a good tea sandwich.")
 case let x where x.hasSuffix("pepper"):
-    print("Is it a spicy \(x)?")
+    print("Is it a spicy \(x)?")                        // spicy(辛辣的)
     fallthrough                                         // 贯穿
 default:
     print("Everything tastes good in soup.")
@@ -191,6 +191,7 @@ print(possibleString!)
 // OV(old version) print(possibleString)
 
 /// implicitly unwrapped optional
-var assumedString:String! = "An implicitly unwrapped optional string"
+var assumedString: String! = "An implicitly unwrapped optional string"
 print(assumedString)
+print(assumedString!)
         

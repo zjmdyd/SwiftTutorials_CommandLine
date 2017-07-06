@@ -19,7 +19,6 @@ greet(name: "Bob", day: "Tuesday")
  func foo(bar x: Int)	foo(bar:2)          Use external label
  
  But then they decided that to make Swift play nice with Cocoa that labels would be required by default in classes, but not in standalone functions. As long as it wasn’t the first parameter in a member function, in which case the label was to be omitted. Unless it was an init in which case all labels were required. Oh, and if it had a default value, whether it is a standalone function or a member function the label was to be required.
- 
  */
 
 /**
@@ -90,7 +89,7 @@ func returnFifteen() -> Int {
     return y
 }
 
-returnFifteen()
+var fifteen = returnFifteen()
 
 /**
  *  Functions are a first-class type. This means that a function can return another function as its value.
@@ -106,6 +105,19 @@ func makeIncrementer () -> ((Int) -> Int) {
 
 var increment = makeIncrementer()
 increment(7)
+
+// e.g.
+func testFunc() -> (() -> Int) {
+    func add() -> Int {
+        return 20
+    }
+    
+    return add;
+}
+
+var testAdd = testFunc()
+var testValue = testAdd()
+
 
 /**
  A function can take another function as one of its arguments.
@@ -159,7 +171,7 @@ incrementor(variable: &luckyNumber)
 print(luckyNumber)
 
 func makeIncrementor(addNumber: Int) -> ((inout Int) -> ()) {
-    func incrementor( variable: inout Int) -> () {
+    func incrementor(variable: inout Int) -> () {
         variable += addNumber;
     }
     return incrementor;
@@ -175,7 +187,7 @@ print(ii)
  Functions are actually a special case of closures: blocks of code that can be called later.
  The code in a closure has access to things like variables and functions that were available in the scope where the closure was created, even if the closure is in a different scope when it is executed—you saw an example of this already with nested functions.
  You can write a closure without a name by surrounding code with braces ({}).
- Use in to separate the arguments and return type from the body. 使用关键字in来把参数、返回值与body分开
+ Use in to separate the arguments and return type from the body. (使用关键字in来把参数、返回值与body分开)
  */
 
 var r = nums.map({
