@@ -112,6 +112,7 @@ var triangle = EquilateralTriangle(sideLength: 3.3, name: "a triangle")
 triangle.perimeter
 triangle.perimeter = 9.9
 triangle.sideLength
+
 /**
  *** Notice that the initializer for the EquilateralTriangle class has three different steps:
  
@@ -143,16 +144,18 @@ class TriangleAndSquare {
         triangle = EquilateralTriangle(sideLength: size+1, name: name)
     }
 }
+
 var triangleAndSquare = TriangleAndSquare(size: 10, name: "another test shape")
 triangleAndSquare.triangle.sideLength   // 11
 triangleAndSquare.square.sideLength     // 10, 上面两值不一样,验证下面的第5条性质
+
 triangleAndSquare.square = Square(sideLength: 20, name: "large square")
 triangleAndSquare.square.sideLength     // 20
 triangleAndSquare.triangle.sideLength   // 20
 
 /**
  Swift - 属性观察者（willSet与didSet）
- *  属性观察者，类似于触发器。用来监视属性的除初始化之外的属性值变化，当属性值发生改变时可以对此作出响应。有如下特点：
+ *  属性观察者，类似于触发器。用来监视属性的 除初始化之外 的属性值变化，当属性值发生改变时可以对此作出响应。有如下特点：
  1，不仅可以在属性值改变后触发didSet，也可以在属性值改变前触发willSet。
  2，给属性添加观察者必须要声明清楚属性类型，否则编译器报错。
  3，willSet可以带一个newName的参数，没有的话，该参数默认命名为newValue。

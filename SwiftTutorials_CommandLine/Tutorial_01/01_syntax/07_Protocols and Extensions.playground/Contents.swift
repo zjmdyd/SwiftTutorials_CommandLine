@@ -8,9 +8,10 @@ import UIKit
 
 ///Use protocol to declare a protocol.
 protocol ExampleProtocol {
-    var simpleDescription: String { get }   /// 只读
+    var simpleDescription: String { get }   /// 只读， 实现者可以是只读 也可以是可读可写
     mutating func adjust()
 }
+
 /// Classes, enumerations, and structs can all adopt protocols.
 class SimpleClass: ExampleProtocol {
     var simpleDescription: String = "A very simple class"
@@ -59,9 +60,8 @@ extension Int: ExampleProtocol {
 }
 999.simpleDescription
 var i = 999
-i.adjust()  // 不能使用999直接调用,因为999是常量
+i.adjust()  // 不能使用999直接调用,因为999是常量，不可变
 i.simpleDescription
-
 /**
  *  You can use a protocol name just like any other named type—for example, to create a collection of objects that have different types but that all conform to a single protocol. When you work with values whose type is a protocol type, methods outside the protocol definition are not available.
  */
@@ -584,14 +584,14 @@ for _ in 1...4 {
         }
     }
 }
-
+print("hhhh")
 counter.count = -4
 counter.dataSource = TowardZeroSource()
 for _ in 1...5 {
     counter.increment()
     print(counter.count)
 }
-
+print("hhhh")
 /**
  协议扩展
  协议可以通过扩展来为采纳协议的类型提供属性、方法以及下标的实现。通过这种方式，你可以基于协议本身来实现这些功能，而无需在每个采纳协议的类型中都重复同样的实现，也无需使用全局函数。

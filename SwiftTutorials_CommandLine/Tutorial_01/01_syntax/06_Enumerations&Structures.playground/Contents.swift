@@ -186,7 +186,6 @@ case let .Error(error):
  */
 
 
-
 /** Structures (结构体)
  *   Use struct to create a structure. Structures support many of the same behaviors as classes, including methods and initializers.
  /// One of the most important differences between structures and classes is that structures are always copied when they are passed around in your code, but classes are passed by reference.
@@ -202,3 +201,4 @@ struct Card {
 
 let threeOfSpades = Card(rank: .Three, suit: .Spades)
 let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+

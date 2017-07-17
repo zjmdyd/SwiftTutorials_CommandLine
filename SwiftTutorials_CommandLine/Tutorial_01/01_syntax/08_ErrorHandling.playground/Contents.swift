@@ -61,7 +61,7 @@ var fridgeIsOpen = false
 let fridgeContent = ["milk", "eggs", "leftovers"]
 func fridgeContains(itemName: String) -> Bool {
     defer {
-        print("hhh")
+        print("mmm")
         fridgeIsOpen = false;
     }
     
