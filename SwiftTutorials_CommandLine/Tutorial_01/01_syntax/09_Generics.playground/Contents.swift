@@ -49,22 +49,12 @@ func anyCommonElements<T: Sequence, U: Sequence>(_ lhs: T, _ rhs: U) -> Bool
         }
     return false
 }
-//func anyCommonElements <T: SequenceType, U: SequenceType where T.Generator.Element: Equatable, T.Generator.Element == U.Generator.Element>(lhs: T, _ rhs: U) -> Bool {
-//    for lhsItem in lhs {
-//        for rhsItem in rhs {
-//            if lhsItem == rhsItem {
-//                return true
-//            }
-//        }
-//    }
-//    
-//    return false
-//}
+
 /**
  函数的类型参数列紧随在两个类型参数需求的后面：
  T必须遵循SequenceType协议 (写作 T: SequenceType)。
  U必须遵循SequenceType协议 (写作 U: SequenceType)。
- U的Element必须遵循Equatable协议 (写作 T.Generator.Element: Equatable)。
+ T的Element必须遵循Equatable协议 (写作 T.Generator.Element: Equatable)。
  T的Element等于U的Element
  第三个和第四个要求被定义为一个where语句的一部分，写在关键字where后面，作为函数类型参数链的一部分。
  */
