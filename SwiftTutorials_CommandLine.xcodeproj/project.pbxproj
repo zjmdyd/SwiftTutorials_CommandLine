@@ -32,7 +32,7 @@
 		383DE45A1C45E7AD00F8BC38 /* guessGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guessGame.swift; sourceTree = "<group>"; };
 		383DE45C1C45E87F00F8BC38 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		3853359E1C7C5B540033F77B /* String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = String.playground; sourceTree = "<group>"; };
-		38535DD11D7FE5A30078624E /* 07_Protocols and Extensions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "07_Protocols and Extensions.playground"; sourceTree = "<group>"; };
+		38535DD11D7FE5A30078624E /* 07_Protocols and Extensions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "07_Protocols and Extensions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		38535ECA1D804B510078624E /* 02_Operator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 02_Operator.playground; sourceTree = "<group>"; };
 		38535ECC1D804E110078624E /* 08_ErrorHandling.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 08_ErrorHandling.playground; sourceTree = "<group>"; };
 		387B82491D4AF09F000C2221 /* 03_ControlFlow.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 03_ControlFlow.playground; sourceTree = "<group>"; };

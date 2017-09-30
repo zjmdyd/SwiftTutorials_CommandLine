@@ -98,6 +98,38 @@ print(welcomeMessage, welcomeMessage, separator: "...", terminator: "E")
 
 
 
+var str = "hyt/bob".uppercased()
+
+
+str = "HYT.BOB".lowercased()
+//var names = str.components(separatedBy: CharacterSet.alphanumerics)
+//names += ["Anna", "git"]
+var names: [String] = ["Anna", "git"]
+
+str = names[1]
+names.isEmpty
+names = names.reversed()
+
+
+str = names.reduce(str, {(a:String, some:String)-> String in return a+","+some})
+str
+str = ""
+names.reduce(str, +)
+
+
+var nums = [1,2,3]
+
+
+var num = 0;
+nums.reduce(num, +)
+
+
+var aa: String? = nil
+print(aa ?? "")
+
+var bb: String!
+print(bb)
+
 
 
 

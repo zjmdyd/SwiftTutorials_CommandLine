@@ -17,6 +17,7 @@ for score in individualScres {
     }
 }
 print(teamScore)
+
 /****   optional    ****
  *  In an if statement, the conditional must be a Boolean expression—this means that code such as if score { ... } is an error, not an implicit comparison to zero.
  
@@ -153,12 +154,11 @@ for _ in 0...4 {
 }
 print(loop)
 
-
 /** 普通可选
  *  Optionals: Optionals are variables that can either contain a value or contain nil.
     Write a question mark (?) after the type of a value to mark the value as optional.
  */
-var optionalNumber : Int? = 5   // The ? is what declares the value as an optional.
+var optionalNumber: Int? = 5   // The ? is what declares the value as an optional.
 optionalNumber = nil
 if let number = optionalNumber {
     print("It is a number")
@@ -183,6 +183,7 @@ var possibleString: String? = "An optional string"
  */
 print(possibleString!)
 // print(possibleString)  // error : ? must be follwed by a call,member lookup,or subscript
+
 /**
  *   你可以把隐式解析可选当做一个可以自动解析的可选。
     你要做的只是声明的时候把感叹号放到类型的结尾，而不是每次取值时都要在待取值变量的结尾加感叹号
@@ -195,3 +196,67 @@ var assumedString: String! = "An implicitly unwrapped optional string"
 print(assumedString)
 print(assumedString!)
         
+
+/*
+ Swift’s nil is’nt the same as nil in Objective-C. In Objective-C, nil is a pointer to a nonexistent object. In Swift, nil isn’t a pointer—it’s the absence of a value of a certain type. Optionals of any type can be set to nil, not just object types.
+ */
+var ll: Int? = 10
+ll = nil
+
+
+/**     理解Swift中Optional的!和?    **/
+// var a : String = nil              // 编译错误，String类型不能为nil
+/*
+ Swift 中的普通类型不再能设为nil。那如何表示这个值不存在呢？所以引进了Optional的概念：代表 nil 或某个具体的值。例如:
+ */
+var a : String? = nil
+/*
+ String? 就是一个Optional，它既能够被具体类型赋值, 也可以赋值为nil。通过 String 和 Optional的比较，发现Optional 就相当于把具体类型和 nil 打包捆绑在了一起，转变成了一种新的类型。
+ */
+
+
+// Optional 有两种声明方法：
+ var apple: String?
+ var bread: String!
+/*
+ 很多人认为，声明为 String! 的变量表明该变量的值不为 nil。但是，实际上，String! 和 String? 都是有默认值的，且默认值都为nil。我们为它们赋一个初值再打印类型来看看：
+ */
+apple = "apple"
+bread = "bread"
+print(apple)
+print(bread)
+/*
+ Optional 的本质是囊括 nil 和具体类型的一种枚举。获取它具体值的操作过程称之为拆包，用 “!” 表示。先来做个实
+ */
+
+var string : String
+var optionalString: String?
+var nonOptionalString: String!
+// string = nonOptionalString   // ① 崩溃   found nil while unwrapping an Optional value
+// string = optionalString      // ② 编译错啦
+// string = optionalString!     // ③ 崩溃 found nil while unwrapping an Optional value
+/*
+ Optional(!) 的变量只是给予了自动拆包的权限，在实际使用它的过程中不需要再次使用 ‘!’ 进行拆包。在swift官方文档中称为：Implicitly Unwrapped Optional (隐式拆包)，也可以理解成“拆过包了”。**
+ 只有在变量确认有值的情况下才能进行拆包。就像如上代码，optionalString 为nil，进行拆包就会引发崩溃。swift官方建议，Optional 使用 if + ! 结合的方式或者 if let 进行安全地拆包
+ */
+
+optionalString = ""
+if let optString = optionalString {
+    optionalString?.appending("aa")
+}else {
+    print("为空")
+}
+/*
+ 拆完包之后的 Optional其实就是 String 类型。编译器强制使用者在变量为 nil 的时候要进行处理，否则就会报错会崩溃。String! 是为了规避变量一定不为 nil 的情况下却要反复判断是否为 nil 的冗余代码而产生的。例如，我们在使用 IBOutlet 时，一定会定义成 Optiona(!)。**String! 在声明时和 String? 完全等价，在使用时和 String 完全等价。
+ 
+ 总结一下：
+ 1. Optional的本质是一个包含了 nil 和普通类型的枚举，这是为了确保使用者在变量为 nil 的情况下会完成相应的处理；
+ 
+ 2. 无论是 Optional(!) 还是 Optional(?) 都是一种Optional，在未设初始值时，默认为nil。Optional(!) 只是给予了自动拆包的权限，省略了判断其值是否为nil的过程，但是不能够保证它的值不为nil；
+ 
+ 3. Optional(!) 在声明时和 Optional(?) 等价，在使用时和具体类型等价；
+ 
+ 4. 一定要确保 Optional 不为 nil 的情况下才可直接拆包，不然会引发崩溃。
+ */
+
+
