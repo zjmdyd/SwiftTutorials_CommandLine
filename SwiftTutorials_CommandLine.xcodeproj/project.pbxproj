@@ -31,20 +31,20 @@
 		383DE4511C45E73D00F8BC38 /* helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
 		383DE45A1C45E7AD00F8BC38 /* guessGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guessGame.swift; sourceTree = "<group>"; };
 		383DE45C1C45E87F00F8BC38 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		3853359E1C7C5B540033F77B /* String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = String.playground; sourceTree = "<group>"; };
+		3853359E1C7C5B540033F77B /* String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = String.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		38535DD11D7FE5A30078624E /* 07_Protocols and Extensions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "07_Protocols and Extensions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		38535ECA1D804B510078624E /* 02_Operator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 02_Operator.playground; sourceTree = "<group>"; };
-		38535ECC1D804E110078624E /* 08_ErrorHandling.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 08_ErrorHandling.playground; sourceTree = "<group>"; };
-		387B82491D4AF09F000C2221 /* 03_ControlFlow.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 03_ControlFlow.playground; sourceTree = "<group>"; };
-		387B824A1D4B02B1000C2221 /* 04_Function&Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "04_Function&Closures.playground"; sourceTree = "<group>"; };
+		38535ECA1D804B510078624E /* 02_Operator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 02_Operator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		38535ECC1D804E110078624E /* 08_ErrorHandling.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 08_ErrorHandling.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		387B82491D4AF09F000C2221 /* 03_ControlFlow.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 03_ControlFlow.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		387B824A1D4B02B1000C2221 /* 04_Function&Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "04_Function&Closures.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		387B824B1D4B2857000C2221 /* labels_1.1-499x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "labels_1.1-499x1024.png"; sourceTree = "<group>"; };
-		387D37CB1D86E7E3000098AC /* 09_Generics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 09_Generics.playground; sourceTree = "<group>"; };
-		38E2D4DA1D70337F00812BE5 /* 06_Enumerations&Structures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "06_Enumerations&Structures.playground"; sourceTree = "<group>"; };
-		38E87D931DC33629009A527A /* 03.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 03.playground; sourceTree = "<group>"; };
-		38E87D941DC33629009A527A /* 02.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 02.playground; sourceTree = "<group>"; };
-		38E87D981DC33746009A527A /* 01_Constants&Variables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "01_Constants&Variables.playground"; sourceTree = "<group>"; };
-		38F7EAD81D4A325200E0A4A1 /* 01_DataType.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 01_DataType.playground; sourceTree = "<group>"; };
-		38FEEB2B1D518AC800380EAA /* 05_Objects&Classes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "05_Objects&Classes.playground"; sourceTree = "<group>"; };
+		387D37CB1D86E7E3000098AC /* 09_Generics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 09_Generics.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		38E2D4DA1D70337F00812BE5 /* 06_Enumerations&Structures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "06_Enumerations&Structures.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		38E87D931DC33629009A527A /* 03.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 03.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		38E87D941DC33629009A527A /* 02.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 02.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		38E87D981DC33746009A527A /* 01_Constants&Variables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "01_Constants&Variables.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		38F7EAD81D4A325200E0A4A1 /* 01_DataType.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 01_DataType.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		38FEEB2B1D518AC800380EAA /* 05_Objects&Classes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "05_Objects&Classes.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,12 +174,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = ZJ;
 				TargetAttributes = {
 					383DE4411C45E66600F8BC38 = {
 						CreatedOnToolsVersion = 7.1.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -223,14 +223,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -269,14 +277,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -304,7 +320,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -312,7 +329,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

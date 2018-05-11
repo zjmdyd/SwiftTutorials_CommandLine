@@ -72,7 +72,7 @@ print(batmanCoolness)
 */
 var languagesLearned =  "3"
 var languagesLearnedNum: Int? = Int(languagesLearned)
-if let num = languagesLearnedNum {
+if languagesLearnedNum != nil {
     print("It is a number")
 }else {
     print("It is not a number")
@@ -88,6 +88,7 @@ let widthLabel = label + String(width)
  *   There’s an even simpler way to include values in strings: Write the value in parentheses(圆括号), and write a backslash (\) before the parentheses
  */
 var apples = 5
+let oranges = 5
 print("Shally has \(apples)aplles")
 print("Shally has \(apples - 5)aplles")
 
@@ -103,6 +104,12 @@ if(John > Sam) {
 }else {
     print("John grade \(John) equal to Sam grade \(Sam)")
 }
+
+let quotation = """
+I said "I have \(apples) apples."
+And then I said "I have \(apples + oranges) pieces of fruit."
+"""
+print(quotation)
 
 /**
  *** 数组 **
@@ -142,6 +149,7 @@ dic["key3"] = "value3"
 for d in dic {
     print("key = ", d.0, ", value = ", d.1)  // 0表示key, 1表示value
 }
+var tDic = ["kk" : "ll"]
 
 for (_, obj) in dic {
     print(obj)
@@ -160,8 +168,8 @@ dic3[1] = 1.0
 var dic4 = Dictionary<String, Int>()
 dic4["a"] = 1
 
-var val = dic4.keys
-print(val)
+//var val = dic4.keys
+//print(val)
 
 /// 清空字典
 dic = [:]

@@ -109,6 +109,21 @@ for (kind, numbers) in interestingNumbers {
 print(largest)
 
 
+var scanner = Scanner.init(string: "0a")
+var val: Int = 0
+scanner.scanInt(&val)
+var data = NSMutableData()
+data.append(&val, length: 1)
+print("data = -->")
+print(data)
+
+func data(from hexStr: String) -> Data {
+    let bytes = self.bytes(from: hexStr)
+    return Data(bytes: bytes)
+}
+data.write(to: <#T##URL#>, options: <#T##NSData.WritingOptions#>)
+
+
 /**
  ****  While  / repate...while  ****
  Use while to repeat a block of code until a condition changes. The condition of a loop can be at the end instead, ensuring that the loop is run at least once.
