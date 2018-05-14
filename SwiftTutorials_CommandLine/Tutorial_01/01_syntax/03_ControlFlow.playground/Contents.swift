@@ -26,12 +26,12 @@ print(teamScore)
 var optionString: String? = "hello"
 print(optionString == nil)
 // annotation (注释注解)
-var optionName: String? = "John"
+var optionName: String?
 var greeting = "Hello"
 if let name = optionName {
     greeting = "Hello, \(name)"
 }else {
-    greeting = "Hello, \(optionName!)"
+    greeting = "Hello, baby"
 }
 
 
@@ -85,15 +85,16 @@ var largest = 0
  *  遍历字典方法1
  */
 for dic in interestingNumbers {
-    for a in dic.1 {
-        if a > largest {
-            largest = a
+    for num in dic.1 {
+        if num > largest {
+            largest = num
         }
     }
 }
 
 print("largest = \(largest)")
 largest = 0
+
 /**
  *  遍历字典方法2
  */
@@ -109,25 +110,11 @@ for (kind, numbers) in interestingNumbers {
 print(largest)
 
 
-var scanner = Scanner.init(string: "0a")
-var val: Int = 0
-scanner.scanInt(&val)
-var data = NSMutableData()
-data.append(&val, length: 1)
-print("data = -->")
-print(data)
-
-func data(from hexStr: String) -> Data {
-    let bytes = self.bytes(from: hexStr)
-    return Data(bytes: bytes)
-}
-data.write(to: <#T##URL#>, options: <#T##NSData.WritingOptions#>)
-
-
 /**
  ****  While  / repate...while  ****
  Use while to repeat a block of code until a condition changes. The condition of a loop can be at the end instead, ensuring that the loop is run at least once.
  */
+
 var donutsLeft = 6
 while (donutsLeft > 0) {
     print("You have \(donutsLeft) donuts left")
@@ -146,7 +133,7 @@ var loop = 0
 /**
  *  Use ..< to make a range that omits its upper value
  */
-for i in 0..<4 {
+for _ in 0..<4 {
     //    loop++    // deprecated 3.0
     loop += 1
 }
@@ -156,7 +143,7 @@ loop = 0
 /**
  *  use ... to make a range that includes both values
  */
-for i in 0...4 {
+for _ in 0...4 {
     loop += 1
 }
 print(loop)
@@ -164,10 +151,7 @@ print(loop)
 /**
  下划线符号_(替代循环中的变量)能够忽略具体的值，并且不提供循环遍历时对值的访问
  */
-for _ in 0...4 {
-    loop += 1
-}
-print(loop)
+
 
 /** 普通可选
  *  Optionals: Optionals are variables that can either contain a value or contain nil.
@@ -176,7 +160,7 @@ print(loop)
 var optionalNumber: Int? = 5   // The ? is what declares the value as an optional.
 optionalNumber = nil
 if let number = optionalNumber {
-    print("It is a number")
+    print("It is a number: \(number)")
 }else {
     print("It is not a number")
 }
@@ -197,20 +181,18 @@ var possibleString: String? = "An optional string"
  var possibleString:String?  // Execution was interrupted,在没有初始化的普通可选时加!
  */
 print(possibleString!)
-// print(possibleString)  // error : ? must be follwed by a call,member lookup,or subscript
+//print(possibleString)  // error : ? must be follwed by a call,member lookup,or subscript
 
 /**
  *   你可以把隐式解析可选当做一个可以自动解析的可选。
     你要做的只是声明的时候把感叹号放到类型的结尾，而不是每次取值时都要在待取值变量的结尾加感叹号
  */
-print(possibleString!)
-// OV(old version) print(possibleString)
 
-/// implicitly unwrapped optional
+// implicitly unwrapped optional
 var assumedString: String! = "An implicitly unwrapped optional string"
 print(assumedString)
 print(assumedString!)
-        
+
 
 /*
  Swift’s nil is’nt the same as nil in Objective-C. In Objective-C, nil is a pointer to a nonexistent object. In Swift, nil isn’t a pointer—it’s the absence of a value of a certain type. Optionals of any type can be set to nil, not just object types.
@@ -238,7 +220,7 @@ var a : String? = nil
  */
 apple = "apple"
 bread = "bread"
-print(apple)
+print(apple!)
 print(bread)
 /*
  Optional 的本质是囊括 nil 和具体类型的一种枚举。获取它具体值的操作过程称之为拆包，用 “!” 表示。先来做个实
@@ -256,7 +238,7 @@ var nonOptionalString: String!
  */
 
 optionalString = ""
-if let optString = optionalString {
+if optionalString != nil {
     optionalString?.appending("aa")
 }else {
     print("为空")
