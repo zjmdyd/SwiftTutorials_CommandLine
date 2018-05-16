@@ -3,14 +3,22 @@
 import UIKit
 
 /**** function  ****
-    Use func to declare a function. Call a function by following its name with a list of arguments in parentheses. Use -> to separate the parameter names and types from the function’s return type.
+ Use func to declare a function. Call a function by following its name with a list of arguments in parentheses. Use -> to separate the parameter names and types from the function’s return type.
  */
 
 func greet(name: String, day: String) -> String {
     return "Hello \(name), today is \(day)."
 }
 greet(name: "Bob", day: "Tuesday")
-// greet("Bob", day: "Tuesday")  // swift 2
+
+/**
+ By default, functions use their parameter names as labels for their arguments.
+ Write a custom argument label before the parameter name, or write _ to use no argument label.
+ */
+func greet(_ person: String, on day: String) -> String {
+    return "Hello \(person), today is \(day)"
+}
+greet("John", on: "Wednesday")
 
 /**
  func foo(x: Int)       foo(2)              Omit label
@@ -23,7 +31,7 @@ greet(name: "Bob", day: "Tuesday")
 
 /**
  *   元组
- *   Use a tuple to make a compound value—for example, to return multiple values from a function.
+ *   Use a tuple(元组) to make a compound value—for example, to return multiple values from a function.
  *   The elements of a tuple can be referred to either by name or by number
  */
 
@@ -149,12 +157,12 @@ func incrementor(variable: Int) -> Int {
 }
 let newNumber = incrementor(variable: luckyNumber)
 /**
-    默认认为是不可变的，也就是用 let 进行声明的。这样不仅可以确保安全，也能在编译器的性能优化上更有作为。在方法的参数上也是如此，我们不写修饰符的话，默认情况下所有参数都是 let 的
-    等效为
+ 默认认为是不可变的，也就是用 let 进行声明的。这样不仅可以确保安全，也能在编译器的性能优化上更有作为。在方法的参数上也是如此，我们不写修饰符的话，默认情况下所有参数都是 let 的
+ 等效为
  func incrementor(let variable: Int) -> Int {
-    var variable = variable
-    variable += 1
-    return variable
+ var variable = variable
+ variable += 1
+ return variable
  }
  */
 print(luckyNumber)
@@ -189,18 +197,16 @@ print(ii)
  You can write a closure without a name by surrounding code with braces ({}).
  Use in to separate the arguments and return type from the body. (使用关键字in来把参数、返回值与body分开)
  */
-
-var r = nums.map({
-    (num: Int) -> Int in
+// nums = [20, 19, 7, 11]
+var r = nums.map({(num: Int) -> Int in
     let result = 3 * num
     return result
 })
 print(r)
 
-var s = nums.map({
-    (num: Int) -> Int in
+var s = nums.map({(num: Int) -> Int in
     if num % 2 == 1 {
-        return num+1
+        return num + 1
     }else {
         return num
     }
@@ -223,10 +229,41 @@ print(mapNum)
 let sortNumbers = nums.sorted{$0 > $1}
 print(sortNumbers)
 
+//
+var numbers = [12, 25, 1, 35, 27]
+let numbersSorted = numbers.sorted{(n1: Int, n2: Int) -> Bool in
+    //进行从小到大的排序
+    return n2 > n1
+}
 
+// 闭包可以不用指定参数类型，编译器会帮我们推断的
+let numbersSorted2 = numbers.sorted{n1, n2 -> Bool in
+    //进行从小到大的排序
+    return n2 > n1
+}
 
+// 还可以省略参数名，直接根据数字来引用每个参数（$0，$1，$2......）
+let numbersSorted3 = numbers.sorted{
+    //进行从小到大的排序
+    return $1 > $0
+}
 
+// 如果闭包只包含一行代码，可以省略return关键字
+let numbersSorted4 = numbers.sorted{
+    //进行从小到大的排序
+    $1 > $0
+}
+print(numbersSorted4)
 
+// 如果一个闭包是函数调用的最后一个参数，可以将它放在括号外面。提高可读性。
+let numbersSorted5 = numbers.sorted(){
+    //进行从小到大的排序
+    $1 > $0
+}
+
+// 闭包也可以存储在变量中，像调用函数一样调用它们
+let comparator = {(a: Int, b: Int) in a < b}
+comparator(2, 5)
 
 
 

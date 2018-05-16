@@ -110,7 +110,7 @@ class EquilateralTriangle: NameShape {
 
 var triangle = EquilateralTriangle(sideLength: 3.3, name: "a triangle")
 triangle.perimeter
-triangle.perimeter = 9.9
+triangle.perimeter = 12
 triangle.sideLength
 
 /**
