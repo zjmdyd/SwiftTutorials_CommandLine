@@ -40,20 +40,23 @@ jack = .Two     // 用点(.)引用,因为变量jack类型已知
 jack.rawValue   // 2
 
 /**
- * 
+ *
+ By default, Swift assigns the raw values starting at zero and incrementing by one each time, but you can change this behavior by explicitly specifying values. In the example above, Ace is explicitly given a raw value of 1, and the rest of the raw values are assigned in order. You can also use strings or floating-point numbers as the raw type of an enumeration. Use the rawValue property to access the raw value of an enumeration case.
+ 
  Inside the switch, the enumeration case is referred to by the abbreviated(简短的) form .Ace because the value of self is already known to be a suit. You can use the abbreviated(简短的) form anytime the value’s type is already known.
  */
 /**
  *  In the example above, the raw-value type of the enumeration is Int, so you only have to specify the first raw value. The rest of the raw values are assigned in order. You can also use strings or floating-point numbers as the raw type of an enumeration. Use the rawValue property to access the raw value of an enumeration case.
  // Enum case must declare a raw value when the preceding raw value is not an integer (如果前面的枚举值不是整形数据那么必须为后面的每个枚举值赋初始值)
  
- Use the init?(rawValue:) initializer to make an instance of an enumeration from a raw value.
+ Use the init?(rawValue:) initializer to make an instance of an enumeration from a raw value. It returns either the enumeration case matching the raw value or nil if there is no matching Rank.
  */
 var aa = Rank(rawValue: 11) // optional
 aa?.simpleDescription()
 
-if let convertedRank = Rank(rawValue: 4) {
-    let threeDescroption = convertedRank.simpleDescription()
+if let convertedRank = Rank(rawValue: 3) {
+    let threeDescription = convertedRank.simpleDescription()
+    print(threeDescription)
 }
 
 /** ** 注意 1 **
@@ -82,10 +85,19 @@ enum Suit {
             return "clubs"
         }
     }
+    func color() -> String {
+        switch self {
+        case .Spades, .Clubs:
+            return "black"
+        case .Hearts, .Diamonds:
+            return "red"
+        }
+    }
 }
 
 let hearts = Suit.Hearts
 hearts.simpleDescription()
+
 
 /**
  枚举定义了一个常用的具有相关性的一组数据，并在你的代码中以一个安全的方式使用它们。
