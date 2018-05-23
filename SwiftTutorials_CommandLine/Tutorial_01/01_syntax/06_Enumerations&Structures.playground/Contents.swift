@@ -97,6 +97,8 @@ enum Suit {
 
 let hearts = Suit.Hearts
 hearts.simpleDescription()
+hearts.color()
+
 
 
 /**
@@ -173,8 +175,10 @@ dd.rawValue
 
 
 /**
+ *  v1:
  *  An instance of an enumeration case can have values associated with the instance(关联值). Instances of the same enumeration case can have different values associated with them. You provide the associated values when you create the instance. Associated values and raw values are different: The raw value of an enumeration case is the same for all of its instances, and you provide the raw value when you define the enumeration.
- 
+ v2:
+    If an enumeration has raw values, those values are determined as part of the declaration, which means every instance of a particular enumeration case always has the same raw value. Another choice for enumeration cases is to have values associated with the case—these values are determined when you make the instance, and they can be different for each instance of an enumeration case. You can think of the associated values as behaving like stored properties of the enumeration case instance.
  For example, consider the case of requesting the sunrise and sunset time from a server. The server either responds with the information or it responds with some error information.
  
  Swift的枚举类型可以由一些数据类型相关的组成，如果需要的话，这些数据类型可以是各不相同的。枚举的这种特性跟其它语言中的奇异集合，标签集合或者变体相似
@@ -209,8 +213,36 @@ struct Card {
     func simpleDescription() -> String {
         return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
     }
+    
+    static func == (card1: Card, card2: Card) -> Bool {
+        if card1.rank == card2.rank && card1.suit == card2.suit {
+            return true
+        }
+        return false
+    }
 }
 
 let threeOfSpades = Card(rank: .Three, suit: .Spades)
 let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+
+var card1 = Card(rank: .Two, suit: .Hearts)
+var card2 = Card(rank: .Two, suit: .Hearts)
+/* ===(恒等)不能比较值类型, 只能用于引用类型
+if card1 === card2 {
+    
+}
+ */
+/// ==比较要求两个实例的类型（类、结构体、枚举等）必须要在该类型中重写==运算符，定义相等规则
+if card1 == card2 {
+    print("card1 == card2")
+}
+/* 类需要给变量赋初始值, 而结构体只需要给出变量的类型，不用给出初始值
+class Cars2 { // error
+    var rank: Rank
+    var suit: Suit
+    func simple() -> String {
+        return "haha"
+    }
+}
+*/
 

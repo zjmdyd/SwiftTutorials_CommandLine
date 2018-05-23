@@ -67,6 +67,7 @@ i.simpleDescription
  */
 let protocolVale: ExampleProtocol = a
 protocolVale.simpleDescription
+(protocolVale as? SimpleClass)?.anotherProperty
 //protocolVale.anotherProperty    // value of type 'ExampleProtocol' has no menber 'anotherProperty'
 /**
  Even though the variable protocolValue has a runtime type of SimpleClass, the compiler treats it as the given type of ExampleProtocol. This means that you can’t accidentally access methods or properties that the class implements in addition to its protocol conformance.
@@ -84,8 +85,7 @@ protocolVale.simpleDescription
  
  通常前置var关键字将属性声明为变量。在属性声明后写上{ get set }表示属性为可读写的。{ get }用来表示属性为可读的。即使你为可读的属性实现了setter方法，它也不会出错。
  
- 在协议中定义 类型属性(静态变量) 时，总是使用 static 关键字作为前缀。当类类型采纳协议时，除了 static 关键字，还可以使用 class 关键字来声明类型属性：
- 
+ 在协议中定义 类型属性(静态变量) 时，总是使用static 关键字作为前缀。当类类型采纳协议时，除了 static 关键字，还可以使用 class 关键字来声明类型属性：
  */
 
 protocol AnotherProtocol {
@@ -105,13 +105,20 @@ protocol FullyNamed {
 struct Person: FullyNamed {
     var fullName: String
 }
-let john = Person(fullName: "john Appleseed")
+var john = Person(fullName: "john Appleseed")
+john.fullName = "john full name"
+print(john.fullName)
+
+// 其实协议中的“只读”属性修饰的是协议这种“类型“”的实例
+var john2: FullyNamed = john
+// john2.fullName = "john2 full name" // 报错
+
 
 class Starship: FullyNamed {
     var prefix: String?
     var name: String
     
-    init(name: String, prefix: String? = nil) {
+    init(name: String, prefix: String?) {
         self.name = name
         self.prefix = prefix
     }
@@ -146,15 +153,12 @@ var tt = Test()
 
 
 // 下面的例子定义了一个只含有一个实例方法的协议：
-
 protocol RandomNumberGenerator {
     func random() -> Double
 }
 /**
  RandomNumberGenerator 协议要求采纳协议的类型必须拥有一个名为 random， 返回值类型为 Double 的实例方法。尽管这里并未指明，但是我们假设返回值在 [0.0,1.0) 区间内。
- 
  RandomNumberGenerator 协议并不关心每一个随机数是怎样生成的，它只要求必须提供一个随机数生成器。
- 
  如下所示，下边是一个采纳并符合 RandomNumberGenerator 协议的类。该类实现了一个叫做 线性同余生成器（linear congruential generator） 的伪随机数算法。
  */
 class LinearCongruentialGenerator: RandomNumberGenerator {
@@ -173,11 +177,7 @@ class LinearCongruentialGenerator: RandomNumberGenerator {
  Mutating 方法要求
  
  有时需要在方法中改变方法所属的实例。例如，在值类型（即结构体和枚举）的实例方法中，将 mutating 关键字作为方法的前缀，写在 func 关键字之前，表示可以在该方法中修改它所属的实例以及实例的任意属性的值。这一过程在在实例方法中修改值类型章节中有详细描述。
- 
  如果你在协议中定义了一个实例方法，该方法会改变采纳该协议的类型的实例，那么在定义协议时需要在方法前加 mutating 关键字。这使得结构体和枚举能够采纳此协议并满足此方法要求。
- 
- 注意
- 实现协议中的 mutating 方法时，若是类类型，则不用写 mutating 关键字。而对于结构体和枚举，则必须写 mutating 关键字。
  **/
 
 protocol Togglable {
@@ -198,22 +198,40 @@ enum OnOffSwitch: Togglable {
 var lightSwitch = OnOffSwitch.Off
 lightSwitch.toggle()
 
+/*
+ 注意
+ 实现协议中的 mutating 方法时，若是类类型，则不用写 mutating 关键字。而对于结构体和枚举，则必须写 mutating 关键字。
+ */
+class OnOffSwitchClass: Togglable {
+    var open = false
+    
+    func toggle() {
+        if self.open {
+            self.open = false
+        }else {
+            self.open = true
+        }
+    }
+}
+var lightSwitch2 = OnOffSwitchClass()
+lightSwitch2.toggle()
+
 /**
  构造器要求
  协议可以要求采纳协议的类型实现指定的构造器。你可以像编写普通构造器那样，在协议的定义里写下构造器的声明，但不需要写花括号和构造器的实体：
  */
 protocol SomeProtocol2 {
-    init(someparameter: Int)
+    init(someParameter: Int)
 }
 /**
  构造器要求在类中的实现
  
  你可以在采纳协议的类中实现构造器，无论是作为指定构造器，还是作为便利构造器。无论哪种情况，你都必须为构造器实现标上 required 修饰符：
  使用 required 修饰符可以确保所有子类也必须提供此构造器实现，从而也能符合协议。
- 如果类已经被标记为 final，那么不需要在协议构造器的实现中使用 required 修饰符，因为 final 类不能有子类。关于 final 修饰符的更多内容
+ 如果类已经被标记为 final，那么不需要在协议构造器的实现中使用 required 修饰符，因为 final 类不能有子类。
  */
 class SomeClass: SomeProtocol2 {
-    required init(someparameter: Int) {
+    required init(someParameter: Int) {
         //  这里是构造器的实现部分
     }
 }
@@ -290,7 +308,6 @@ class SnakesAndLadders: DiceGame {
  这个版本的游戏封装到了 SnakesAndLadders 类中，该类采纳了 DiceGame 协议，并且提供了相应的可读的 dice 属性和 play() 方法。（ dice 属性在构造之后就不再改变，且协议只要求 dice 为可读的，因此将 dice 声明为常量属性。）
  
  游戏使用 SnakesAndLadders 类的 init() 构造器来初始化游戏。所有的游戏逻辑被转移到了协议中的 play() 方法，play() 方法使用协议要求的 dice 属性提供骰子摇出的值。
- 
  注意，delegate 并不是游戏的必备条件，因此 delegate 被定义为 DiceGameDelegate 类型的可选属性。因为 delegate 是可选值，因此会被自动赋予初始值 nil。随后，可以在游戏中为 delegate 设置适当的值。
  
  DicegameDelegate 协议提供了三个方法用来追踪游戏过程。这三个方法被放置于游戏的逻辑中，即 play() 方法内。分别在游戏开始时，新一轮开始时，以及游戏结束时被调用。
@@ -321,7 +338,6 @@ class DiceGameTracker: DiceGameDelegate {
  DiceGameTracker 实现了 DiceGameDelegate 协议要求的三个方法，用来记录游戏已经进行的轮数。当游戏开始时，numberOfTurns 属性被赋值为 0，然后在每新一轮中递增，游戏结束后，打印游戏的总轮数。
  
  gameDidStart(_:) 方法从 game 参数获取游戏信息并打印。game 参数是 DiceGame 类型而不是 SnakeAndLadders 类型，所以在方法中只能访问 DiceGame 协议中的内容。当然了，SnakeAndLadders 的方法也可以在类型转换之后调用。在上例代码中，通过 is 操作符检查 game 是否为 SnakesAndLadders 类型的实例，如果是，则打印出相应的消息。
- 
  无论当前进行的是何种游戏，由于 game 符合 DiceGame 协议，可以确保 game 含有 dice 属性。因此在 gameDidStart(_:) 方法中可以通过传入的 game 参数来访问 dice 属性，进而打印出 dice 的 sides 属性的值。
 */
 
@@ -557,19 +573,19 @@ class Counter {
  如果没有从 incrementForCount(_:) 方法获取到值，可能由于 dataSource 为 nil，或者它并没有实现 incrementForCount(_:) 方法，那么 increment() 方法将试图从数据源的 fixedIncrement 属性中获取增量。fixedIncrement 是一个可选属性，因此属性值是一个 Int? 值，即使该属性在 CounterDataSource 协议中的类型是非可选的 Int。
  
  下面的例子展示了 CounterDataSource 的简单实现。ThreeSource 类采纳了 CounterDataSource 协议，它实现了可选属性 fixedIncrement，每次会返回 3：
- 
- 
- 
  */
+print("********可选协议*********")
 class ThreeSource: NSObject, CounterDataSource {
     let fixedIncrement = 3
 }
 var counter = Counter()
+//counter.count = 1
 counter.dataSource = ThreeSource()
 for _ in 1...4 {
     counter.increment()
     print(counter.count)
 }
+
 /**
  下面是一个更为复杂的数据源 TowardsZeroSource，它将使得最后的值变为 0：
  */
@@ -592,6 +608,7 @@ for _ in 1...5 {
     print(counter.count)
 }
 print("hhhh")
+
 /**
  协议扩展
  协议可以通过扩展来为采纳协议的类型提供属性、方法以及下标的实现。通过这种方式，你可以基于协议本身来实现这些功能，而无需在每个采纳协议的类型中都重复同样的实现，也无需使用全局函数。
@@ -610,7 +627,6 @@ gen.randomBool()
 
 /**
  提供默认实现
- 
  可以通过协议扩展来为协议要求的属性、方法以及下标提供默认的实现。如果采纳协议的类型为这些要求提供了自己的实现，那么这些自定义实现将会替代扩展中的默认实现被使用。
  
  注意
