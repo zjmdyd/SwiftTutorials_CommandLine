@@ -8,18 +8,18 @@ import UIKit
  *  泛型是 Swift 强大特征中的其中一个，许多 Swift 标准库是通过泛型代码构建出来的。事实上，泛型的使用贯穿了整本语言手册，只是你没有发现而已。例如，Swift 的数组和字典类型都是泛型集。你可以创建一个Int数组，也可创建一个String数组，或者甚至于可以是任何其他 Swift 的类型数据数组。同样的，你也可以创建存储任何指定类型的字典（dictionary），而且这些类型可以是没有限制的。
  */
 
-func makeArray<Item>(item: Item, numberOfTimes: Int) -> [Item] {
+func makeArray<Item>(repeating item: Item, numberOfTimes: Int) -> [Item] {
     var result = [Item]()
     
     for _ in 0..<numberOfTimes {
         result.append(item)
     }
-    
+
     return result;
 }
 
-makeArray(item: 1, numberOfTimes: 4)
-makeArray(item: "knock", numberOfTimes: 4)
+makeArray(repeating: 1, numberOfTimes: 4)
+makeArray(repeating: "knock", numberOfTimes: 4)
 
 /**
  *  You can make generic forms of functions and methods, as well as classes, enumerations, and structures.
@@ -157,14 +157,14 @@ var level: Int? = 2
 var startlevel = 1
 var currentLevel = level ?? startlevel
 
-func ??<T>(optional: T?, defaultValue: @autoclosure () -> T) -> T {
-    switch optional {
-    case .some(let value):
-        return value
-    case .none:
-        return defaultValue()
-    }
-}
+//func ??<T>(optional: T?, defaultValue: @autoclosure () -> T) -> T {
+//    switch optional {
+//    case .some(let value):
+//        return value
+//    case .none:
+//        return defaultValue()
+//    }
+//}
 
 /*
 func allItemsMatch<

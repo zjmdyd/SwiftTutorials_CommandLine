@@ -650,7 +650,10 @@ extension PrettyTextRepresentable {
 extension Collection where Iterator.Element: TextRepresentable {
     var textualDescription: String {
         let itemsAsText = self.map { $0.textualDescription }
-        return "[" + itemsAsText.joined(separator: ", ") + "]"
+        print("A hamster***")
+        print(itemsAsText)
+        print("A hamster***")
+        return "[" + itemsAsText.joined(separator: " , ") + "]"
     }
 }
 /**

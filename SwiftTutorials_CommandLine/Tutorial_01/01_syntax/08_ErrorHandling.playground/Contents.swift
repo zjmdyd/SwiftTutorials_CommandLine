@@ -47,7 +47,7 @@ do {
     let printerResponse = try sendToPrinter(printerName: "Never has Toner")
     print(printerResponse)
 }catch PrinterError.OnFire {
-    print("I'll just pust this over here, with the rest of the fire.")
+    print("I'll just put this over here, with the rest of the fire.")
 }catch let printerError as PrinterError {
     print("Printer error: \(printerError).")
 }catch {
